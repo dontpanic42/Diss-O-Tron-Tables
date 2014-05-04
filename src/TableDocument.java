@@ -29,6 +29,11 @@ public class TableDocument {
         table.createTable(this);
     }
 
+    public void addIndividual(TableDocumentIndividual ind)
+    {
+        ind.createTable(this);
+    }
+
     public void save(File file)
     {
         try

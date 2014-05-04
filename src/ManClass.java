@@ -1,12 +1,5 @@
-import org.docx4j.jaxb.Context;
-import org.docx4j.openpackaging.exceptions.InvalidFormatException;
-import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
-import org.docx4j.openpackaging.parts.WordprocessingML.StyleDefinitionsPart;
-import org.docx4j.wml.*;
-
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by daniel on 18.04.14.
@@ -38,6 +31,19 @@ public class ManClass {
 
         doc.addTable(table);
         doc.addTable(table);
+
+
+        TableDocumentIndividual itable = new TableDocumentIndividual();
+
+        ArrayList<String> attr = new ArrayList<String>() {
+            {
+                add(null); add("hatX"); add("Auto");
+            }
+        };
+
+        itable.addRelation(attr);
+        doc.addIndividual(itable);
+
         doc.save(new File("/Users/daniel/Desktop/firsttry.docx"));
 
     }
